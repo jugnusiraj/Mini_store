@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>My Wishlist</h2>
+
+<div class="row">
+
+{% for item in items %}
+
+<div class="col-md-3 mb-4">
+
+    <div class="card">
+
+        <img src="{{ item.product.image.url }}"
+             class="card-img-top"
+             height="220">
+
+        <div class="card-body text-center">
+
+            <h5>{{ item.product.name }}</h5>
+
+            <h4>₹ {{ item.product.price }}</h4>
+
+            <a href="{% url 'add_to_cart' item.product.id %}"
+               class="btn btn-success">
+                Add To Cart
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<h4>No Wishlist Items</h4>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

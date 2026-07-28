@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="text-center">
+
+<h2 class="text-danger">
+Payment Cancelled
+</h2>
+
+<p>
+Payment was cancelled.
+</p>
+
+<a href="{% url 'cart' %}" class="btn btn-warning">
+Back to Cart
+</a>
+
+</div>
+
+{% endblock %}
